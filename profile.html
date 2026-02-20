@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shantha Kumar R. S. — GitHub Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #1E2D40;
+    --slate:   #2E4057;
+    --steel:   #4A6FA5;
+    --powder:  #A8C0D6;
+    --mist:    #DBE8F0;
+    --cloud:   #EEF4F8;
+    --white:   #FAFCFE;
+    --sage:    #6B9E8A;
+    --gold:    #B8996B;
+    --text:    #1E2D40;
+    --subtext: #5A7080;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ─────────────────────────────── */
+  .hero {
+    background: var(--navy);
+    padding: 64px 48px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(74,111,165,0.15);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 30%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(168,192,214,0.08);
+  }
+
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .hero-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--powder);
+    background: rgba(168,192,214,0.12);
+    border: 1px solid rgba(168,192,214,0.25);
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #FAFCFE;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--powder);
+    margin-bottom: 28px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .pill {
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(168,192,214,0.15);
+    border: 1px solid rgba(168,192,214,0.3);
+    color: #C8DCE8;
+    letter-spacing: 0.2px;
+  }
+
+  .pill.cert {
+    background: rgba(184,153,107,0.2);
+    border-color: rgba(184,153,107,0.4);
+    color: #D4B98A;
+  }
+
+  /* ── TAGLINE ──────────────────────────── */
+  .tagline-bar {
+    background: var(--mist);
+    border-bottom: 1px solid var(--powder);
+    padding: 16px 48px;
+    text-align: center;
+  }
+  .tagline-bar p {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--subtext);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── MAIN LAYOUT ──────────────────────── */
+  .main { max-width: 860px; margin: 0 auto; padding: 48px 48px 64px; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--mist);
+  }
+
+  /* ── EXPERTISE GRID ───────────────────── */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 52px;
+  }
+
+  .card {
+    border-radius: 12px;
+    padding: 28px 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30,45,64,0.1);
+  }
+
+  .card-cloud    { background: var(--cloud);  border: 1px solid #C8DCEA; }
+  .card-ml       { background: #EBF2ED;        border: 1px solid #B8D4C0; }
+  .card-iot      { background: #F0EDE8;        border: 1px solid #D8CDB8; }
+  .card-ocean    { background: #E8EEF5;        border: 1px solid #BCCEDE; }
+  .card-web      { background: #F0EBF5;        border: 1px solid #CDBBD8; grid-column: span 2; }
+
+  .card-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .card p {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--subtext);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: rgba(30,45,64,0.07);
+    color: var(--slate);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── PUBLICATIONS ─────────────────────── */
+  .pubs { margin-bottom: 52px; }
+
+  .pub-item {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 0 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--mist);
+    align-items: start;
+  }
+  .pub-item:last-child { border-bottom: none; }
+
+  .pub-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--steel);
+    font-weight: 400;
+    padding-top: 2px;
+  }
+
+  .pub-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .pub-doi {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--steel);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--powder);
+    transition: color 0.2s;
+  }
+  .pub-doi:hover { color: var(--sage); }
+
+  /* ── EDUCATION ────────────────────────── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .edu-card {
+    background: var(--cloud);
+    border: 1px solid #C8DCEA;
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .edu-card.cert {
+    background: #F5F1EB;
+    border-color: #D8CCBA;
+  }
+
+  .edu-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--subtext);
+    margin-bottom: 6px;
+  }
+
+  .edu-card h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .edu-card span {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--subtext);
+  }
+
+  /* ── FOOTER ───────────────────────────── */
+  .footer {
+    background: var(--navy);
+    padding: 24px 48px;
+    text-align: center;
+  }
+  .footer p {
+    font-size: 13px;
+    color: var(--powder);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">GitHub Profile</div>
+    <h1>Shantha Kumar R. S.</h1>
+    <p class="hero-sub">Scientific Researcher &nbsp;·&nbsp; Cloud Engineer &nbsp;·&nbsp; ML Specialist</p>
+    <div class="hero-pills">
+      <span class="pill">📍 Germany</span>
+      <span class="pill">🌐 Tamil · English · German (B2)</span>
+      <span class="pill cert">☁️ AWS Certified Cloud Practitioner · valid 12/2028</span>
+    </div>
+  </div>
+</header>
+
+<!-- TAGLINE -->
+<div class="tagline-bar">
+  <p>"Bridging scientific instrumentation with intelligent cloud systems."</p>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- EXPERTISE -->
+  <div class="section-label">Areas of Expertise</div>
+  <div class="expertise-grid">
+
+    <div class="card card-cloud">
+      <span class="card-icon">☁️</span>
+      <h3>Cloud & Data Engineering</h3>
+      <p>Scalable data pipelines, ETL frameworks, and cloud-native architectures built on AWS.</p>
+      <div class="tags">
+        <span class="tag">AWS</span><span class="tag">Lambda</span><span class="tag">S3</span>
+        <span class="tag">EventBridge</span><span class="tag">Docker</span><span class="tag">CI/CD</span>
+      </div>
+    </div>
+
+    <div class="card card-ml">
+      <span class="card-icon">🤖</span>
+      <h3>Machine Learning & Computer Vision</h3>
+      <p>Hierarchical classification, ensemble models, and time-series forecasting — up to 94% accuracy.</p>
+      <div class="tags">
+        <span class="tag">YOLOv3</span><span class="tag">XGBoost</span><span class="tag">Random Forest</span>
+        <span class="tag">OpenCV</span><span class="tag">SageMaker</span>
+      </div>
+    </div>
+
+    <div class="card card-iot">
+      <span class="card-icon">📡</span>
+      <h3>Scientific Instrumentation & IoT</h3>
+      <p>Low-cost 3D measurement systems, sensor integration, and camera-projector calibration pipelines.</p>
+      <div class="tags">
+        <span class="tag">BeagleBone Black</span><span class="tag">PySerial</span>
+        <span class="tag">I²C Protocol</span><span class="tag">Embedded Linux</span>
+      </div>
+    </div>
+
+    <div class="card card-ocean">
+      <span class="card-icon">🌊</span>
+      <h3>Research Data & Oceanography</h3>
+      <p>Oceanographic dataset capture, standardization, and publication via scientific ETL workflows.</p>
+      <div class="tags">
+        <span class="tag">PANGAEA</span><span class="tag">pandas</span>
+        <span class="tag">APython</span><span class="tag">PyQt5</span>
+      </div>
+    </div>
+
+    <div class="card card-web">
+      <span class="card-icon">🌐</span>
+      <h3>Full-Stack Web Development</h3>
+      <p>End-to-end web applications with cloud-integrated backends for real-time monitoring and data visualization.</p>
+      <div class="tags">
+        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span>
+        <span class="tag">RESTful APIs</span><span class="tag">AWS API Gateway</span>
+        <span class="tag">HTML & CSS</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="section-label">Selected Publications</div>
+  <div class="pubs">
+
+    <div class="pub-item">
+      <span class="pub-year">2022</span>
+      <div>
+        <div class="pub-title">Raw oceanographic data — RV ELISABETH MANN BORGESE (EMB304), PANGAEA</div>
+        <a class="pub-doi" href="https://doi.org/10.1594/PANGAEA.950361">DOI: 10.1594/PANGAEA.950361</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2020</span>
+      <div>
+        <div class="pub-title">Hierarchical fish classification, counting & length measurement using stacking models</div>
+        <a class="pub-doi" href="https://doi.org/10.5445/KSP/1000124383">DOI: 10.5445/KSP/1000124383</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2019</span>
+      <div>
+        <div class="pub-title">Entwicklung eines kostengünstigen 3D-Oberflächenmesssystems</div>
+        <span class="pub-doi">Heilbronn Conference Proceedings</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <span class="pub-year">2018</span>
+      <div>
+        <div class="pub-title">Camera projector system for cost-effective 3D surface detection</div>
+        <a class="pub-doi" href="https://doi.org/10.5445/KSP/1000085290">DOI: 10.5445/KSP/1000085290</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section-label">Education & Certifications</div>
+  <div class="edu-grid">
+
+    <div class="edu-card">
+      <div class="edu-card-label">Master's Degree</div>
+      <h4>M.Sc. Scientific Instrumentation</h4>
+      <span>Ernst-Abbe-Hochschule, Jena &nbsp;·&nbsp; 2015–2019</span>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-card-label">Bachelor's Degree</div>
+      <h4>B.Sc. Electronics & Instrumentation</h4>
+      <span>Sathyabama University, India &nbsp;·&nbsp; 2008–2012</span>
+    </div>
+
+    <div class="edu-card cert">
+      <div class="edu-card-label">Certification</div>
+      <h4>AWS Certified Cloud Practitioner</h4>
+      <span>Valid until December 2028</span>
+    </div>
+
+    <div class="edu-card cert">
+      <div class="edu-card-label">Certification</div>
+      <h4>AWS Academy Machine Learning</h4>
+      <span>2023</span>
+    </div>
+
+    <div class="edu-card cert" style="grid-column: span 2;">
+      <div class="edu-card-label">Specialization</div>
+      <h4>Forecasting & Feature Selection for Machine Learning</h4>
+      <span>Train in Data &nbsp;·&nbsp; 2025–present</span>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Open to collaborations in data science, cloud engineering, computer vision & scientific IoT projects.</p>
+</footer>
+
+</body>
+</html>
